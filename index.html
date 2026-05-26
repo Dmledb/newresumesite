@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dylan Ledbetter | IoT Edge Systems Architect</title>
+  <meta name="description" content="Portfolio and resume of Dylan Ledbetter, an IoT Edge Systems Architect specializing in distributed edge computing, container orchestration, SCADA networks, and secure cloud integrations.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛰️</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- FOUC Prevention Script for Dark Mode -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    {
+      const colorScheme = localStorage.getItem("color-scheme");
+      if (colorScheme) {
+        document.querySelector('meta[name="color-scheme"]').content = colorScheme;
+        document.documentElement.setAttribute('data-theme', colorScheme);
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header id="main-header">
+    <div class="header-container">
+      <a href="#hero" class="logo" aria-label="Dylan Ledbetter Portfolio Home">
+        <span class="logo-accent">&lt;</span>DL<span class="logo-accent"> /&gt;</span>
+      </a>
+      
+      <nav id="nav-menu" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle Theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 15l1.5 1.5m4.5-4.5 1.5 1.5M3 12h2.25m13.5 0H21M5.75 5.75l1.5 1.5m10.5 10.5 1.5 1.5M12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+          </svg>
+        </button>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge fade-in">Available for new opportunities</div>
+          <h1 class="fade-in">Hi, I'm <span class="text-gradient">Dylan Ledbetter</span></h1>
+          <h2 class="fade-in">
+            <span class="role-static">IoT Edge </span><span id="role-text" class="role-dynamic">Systems Architect</span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero-lead fade-in">
+            I design, deploy, and manage secure edge computing nodes, robust container environments, and remote communication links at scale. Focused on Linux orchestration, SCADA interfacing, and resilient network architectures.
+          </p>
+          
+          <div class="hero-actions fade-in">
+            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+            <button id="download-cv" class="btn btn-secondary" onclick="window.print()">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="btn-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              Resume PDF
+            </button>
+          </div>
+
+          <div class="social-links fade-in">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in">
+          <div class="visual-card-wrapper">
+            <div class="visual-card glass">
+              <div class="card-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="card-title">dylan_ledbetter.json</span>
+              </div>
+              <div class="card-body code-font">
+<span class="code-keyword">const</span> architect = {
+  name: <span class="code-string">"Dylan Ledbetter"</span>,
+  title: <span class="code-string">"IoT Edge Systems Architect"</span>,
+  os: [<span class="code-string">"Linux"</span>, <span class="code-string">"Ubuntu"</span>],
+  comms: [<span class="code-string">"Cellular"</span>, <span class="code-string">"LEO Satellite"</span>, <span class="code-string">"SCADA"</span>],
+  orchestration: [<span class="code-string">"Docker"</span>, <span class="code-string">"OpenShift"</span>, <span class="code-string">"Ansible"</span>],
+  activeGateways: <span class="code-number">8200</span>
+};
+              </div>
+            </div>
+            <div class="glow-sphere"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="about-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am an IoT Edge Systems Architect with 8+ years of experience specialized in building secure, distributed compute infrastructures for remote devices, factory floors, and industrial automation networks.
+            </p>
+            <p>
+              My design philosophy centers around high availability, automated host provisioning, failover telemetries, and containerized edge logic. I excel at orchestrating Linux distributions, writing high-efficiency Bash and Python control scripts, and integrating hardware sensors with cloud endpoints.
+            </p>
+            
+            <div class="core-values">
+              <div class="value-item">
+                <div class="value-icon">⚡</div>
+                <h3>Resilient Edge</h3>
+                <p>Designing localized edge architectures that operate autonomously even during total network blackouts.</p>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">🛰️</div>
+                <h3>Smart Comms</h3>
+                <p>Architecting hybrid connection paths utilizing cellular networks, LEO satellites (Starlink), and local industrial fieldbuses.</p>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">☁️</div>
+                <h3>Scale Control</h3>
+                <p>Standardizing configuration states across massive device grids using Ansible, Puppet, and OpenShift clusters.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-wrapper">
+            <h3>Technical Expertise</h3>
+            <p class="skills-subtitle">Click categories to explore specific stack tools</p>
+            
+            <div class="skills-accordion">
+              <details open class="skills-group glass">
+                <summary class="skills-group-header">
+                  <span>Systems & Core OS</span>
+                  <span class="accordion-icon">+</span>
+                </summary>
+                <div class="skills-group-content">
+                  <span class="skill-pill">Linux</span>
+                  <span class="skill-pill">Ubuntu</span>
+                  <span class="skill-pill">Hardware Gateways</span>
+                  <span class="skill-pill">Distributed Systems</span>
+                  <span class="skill-pill">System Architecture</span>
+                </div>
+              </details>
+
+              <details class="skills-group glass">
+                <summary class="skills-group-header">
+                  <span>Containers & Automation</span>
+                  <span class="accordion-icon">+</span>
+                </summary>
+                <div class="skills-group-content">
+                  <span class="skill-pill">Containers</span>
+                  <span class="skill-pill">Docker</span>
+                  <span class="skill-pill">OpenShift</span>
+                  <span class="skill-pill">Puppet</span>
+                  <span class="skill-pill">Ansible</span>
+                  <span class="skill-pill">Bash Scripting</span>
+                  <span class="skill-pill">Python Automation</span>
+                </div>
+              </details>
+
+              <details class="skills-group glass">
+                <summary class="skills-group-header">
+                  <span>Connectivity & Protocols</span>
+                  <span class="accordion-icon">+</span>
+                </summary>
+                <div class="skills-group-content">
+                  <span class="skill-pill">SCADA Systems</span>
+                  <span class="skill-pill">Cellular Connectivity</span>
+                  <span class="skill-pill">LEO Connectivity</span>
+                  <span class="skill-pill">Networking (TCP/IP)</span>
+                  <span class="skill-pill">Industrial Protocols</span>
+                </div>
+              </details>
+
+              <details class="skills-group glass">
+                <summary class="skills-group-header">
+                  <span>Cloud & Intelligence</span>
+                  <span class="accordion-icon">+</span>
+                </summary>
+                <div class="skills-group-content">
+                  <span class="skill-pill">Azure IoT</span>
+                  <span class="skill-pill">AWS Core / Greengrass</span>
+                  <span class="skill-pill">Machine Learning</span>
+                  <span class="skill-pill">HTML & CSS</span>
+                  <span class="skill-pill">Scripting</span>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="experience-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-card glass">
+              <div class="timeline-header">
+                <h3>Lead IoT Systems Architect <span class="text-gradient">@ Horizon Systems</span></h3>
+                <span class="timeline-location">Remote / Houston, TX</span>
+              </div>
+              <p class="role-desc">Architecting secure containerized runtimes and automation engines for fleet edge computing hardware.</p>
+              
+              <details class="timeline-details">
+                <summary class="btn-text">
+                  Show Achievements
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                </summary>
+                <ul class="achievements-list">
+                  <li>Designed and deployed OpenShift / Kubernetes orchestrations managing 8,000+ active edge gateway installations globally.</li>
+                  <li>Formulated standardized host configurations utilizing Puppet and Ansible, reducing localized installation times by 80%.</li>
+                  <li>Engineered network path routing logic for automatic failover between cellular LTE/5G and LEO satellite (Starlink) links, achieving 99.99% connectivity uptime.</li>
+                  <li>Automated security compliance provisioning across Linux Ubuntu distributions, enforcing sandbox containment policies for third-party scripts.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2023</div>
+            <div class="timeline-card glass">
+              <div class="timeline-header">
+                <h3>Senior Edge Systems Architect <span class="text-gradient">@ Industrial Solutions Group</span></h3>
+                <span class="timeline-location">Boston, MA</span>
+              </div>
+              <p class="role-desc">Developed localized telemetry sync engines and SCADA gateway systems for critical infrastructure.</p>
+              
+              <details class="timeline-details">
+                <summary class="btn-text">
+                  Show Achievements
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                </summary>
+                <ul class="achievements-list">
+                  <li>Integrated SCADA field devices with central cloud pipelines (AWS IoT Core, Azure IoT Hub), structuring data telemetry under high-throughput conditions.</li>
+                  <li>Developed custom containerized microservices in Docker to aggregate sensor readings and perform local processing, decreasing local bandwidth requirements by 45%.</li>
+                  <li>Deployed TensorFlow Lite machine learning models directly to localized edge gateways to trigger real-time anomaly alerts without cloud reliance.</li>
+                  <li>Coded automated Python and Bash scripting test harnesses to simulate sensor streams and hardware failure conditions.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018 - 2020</div>
+            <div class="timeline-card glass">
+              <div class="timeline-header">
+                <h3>Systems Engineer <span class="text-gradient">@ Automation Labs</span></h3>
+                <span class="timeline-location">Austin, TX</span>
+              </div>
+              <p class="role-desc">Administered plant floor automation systems and configured remote telemetry units.</p>
+              
+              <details class="timeline-details">
+                <summary class="btn-text">
+                  Show Achievements
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                </summary>
+                <ul class="achievements-list">
+                  <li>Maintained plant-floor Linux (Ubuntu) server nodes, managing user access controls, system backups, and hardware updates.</li>
+                  <li>Authored robust Bash configuration scripts that automated 90% of repeatable setup routines for remote telemetry terminals (RTUs).</li>
+                  <li>Created responsive HTML/CSS web portals to serve local diagnostic data and cellular signal logs to plant supervisors.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="projects-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <!-- Category Filter Tabs -->
+        <div class="project-filters" role="tablist" aria-label="Filter Projects">
+          <button class="filter-tab active" role="tab" aria-selected="true" aria-controls="projects-grid" data-filter="all">All</button>
+          <button class="filter-tab" role="tab" aria-selected="false" aria-controls="projects-grid" data-filter="systems">Systems/Edge</button>
+          <button class="filter-tab" role="tab" aria-selected="false" aria-controls="projects-grid" data-filter="network">Network/Cloud</button>
+          <button class="filter-tab" role="tab" aria-selected="false" aria-controls="projects-grid" data-filter="automation">Automation</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects-grid" class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card glass" data-category="systems">
+            <div class="project-image-placeholder">
+              <span class="project-icon">📈</span>
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-meta">Systems/Edge</span>
+              <h3>Zephyr Telemetry Monitor</h3>
+              <p>A real-time web portal visualizing local cellular (5G/LTE) signal metrics, packet loss, and CPU temperatures for fleets of Ubuntu edge nodes.</p>
+              <div class="project-tech">
+                <span>HTML5 / CSS3</span>
+                <span>JavaScript</span>
+                <span>Bash Scripting</span>
+                <span>Linux</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="View source code for Zephyr Telemetry Monitor">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  Code
+                </a>
+                <a href="#" class="link-btn" aria-label="View live demo of Zephyr Telemetry Monitor">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card glass" data-category="network">
+            <div class="project-image-placeholder">
+              <span class="project-icon">🐚</span>
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-meta">Network/Cloud</span>
+              <h3>Aether Edge Daemon</h3>
+              <p>A secure, low-overhead Linux daemon written in Go/Rust that connects SCADA devices to AWS IoT Core over MQTT. Handles offline-first buffering.</p>
+              <div class="project-tech">
+                <span>Go / Rust</span>
+                <span>AWS Greengrass</span>
+                <span>MQTT</span>
+                <span>SCADA</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="View source code for Aether Edge Daemon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  Code
+                </a>
+                <a href="#" class="link-btn" aria-label="View live demo of Aether Edge Daemon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card glass" data-category="automation">
+            <div class="project-image-placeholder">
+              <span class="project-icon">📦</span>
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-meta">Automation</span>
+              <h3>Orion Provisioner</h3>
+              <p>An automated provisioning tool for installing customized Ubuntu OS instances and Docker packages on hardware gateways (Raspberry Pi/x86).</p>
+              <div class="project-tech">
+                <span>Ansible</span>
+                <span>Puppet</span>
+                <span>Bash</span>
+                <span>Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="View source code for Orion Provisioner">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  Code
+                </a>
+                <a href="#" class="link-btn" aria-label="View live demo of Orion Provisioner">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card glass" data-category="systems">
+            <div class="project-image-placeholder">
+              <span class="project-icon">⚙️</span>
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-meta">Systems/Edge</span>
+              <h3>Greengrass ML Sandbox</h3>
+              <p>AWS IoT Greengrass component wrapper templates for deploying python-based anomaly detection models to hardware nodes at the Edge.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Docker</span>
+                <span>Machine Learning</span>
+                <span>AWS greengrass</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="View source code for Greengrass ML Sandbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  Code
+                </a>
+                <a href="#" class="link-btn" aria-label="View live demo of Greengrass ML Sandbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's start a conversation</h3>
+            <p>
+              I am open to contract opportunities, full-time senior technical leadership positions, or architectural consulting. Fill out the form or reach out directly via email.
+            </p>
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:Dylan.m.ledbetter@gmail.com" class="contact-link">Dylan.m.ledbetter@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-method-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <h4>Location</h4>
+                  <span>Houston, Texas (Open to Remote)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper glass">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                  <span class="error-msg" id="name-error" aria-live="polite">Name is required.</span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                  <span class="error-msg" id="email-error" aria-live="polite">Please enter a valid email.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                <span class="error-msg" id="subject-error" aria-live="polite">Subject is required.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                <span class="error-msg" id="message-error" aria-live="polite">Message cannot be empty.</span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-full">
+                <span class="btn-text-content">Send Message</span>
+                <div class="spinner" aria-hidden="true"></div>
+              </button>
+              
+              <div id="form-feedback" class="form-feedback" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Dylan Ledbetter. All rights reserved.</p>
+      <p class="footer-meta">Built with Vanilla HTML, CSS & JS. Core Web Vitals optimized.</p>
+    </div>
+  </footer>
+</body>
+</html>
