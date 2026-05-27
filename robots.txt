@@ -1,0 +1,11 @@
+# Block AI Data Scrapers
+User-agent: GPTBot
+Disallow: /
+
+# Block Image Scrapers
+User-agent: Google-Extended
+Disallow: /
+
+# Allow all other search bots
+User-agent: *
+Disallow:
