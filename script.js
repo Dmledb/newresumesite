@@ -63,7 +63,7 @@ function initTypingCarousel() {
 
   const roles = [
     'Systems Architect',
-    'IoT Edge Expert',
+    'Expert',
     'Linux Specialist',
     'Distributed Engineer'
   ];
@@ -75,7 +75,7 @@ function initTypingCarousel() {
 
   function type() {
     const currentRole = roles[roleIndex];
-    
+
     if (isDeleting) {
       // Erasing characters
       roleText.textContent = currentRole.substring(0, charIndex - 1);
@@ -92,7 +92,7 @@ function initTypingCarousel() {
     if (!isDeleting && charIndex === currentRole.length) {
       isDeleting = true;
       typingSpeed = 2000; // Pause at full word
-    } 
+    }
     // If word is completely erased
     else if (isDeleting && charIndex === 0) {
       isDeleting = false;
@@ -171,7 +171,7 @@ function initProjectFilters() {
 
         // Apply visual fade animation during filtering
         card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        
+
         if (filterVal === 'all' || cardCategory === filterVal) {
           card.style.display = 'flex';
           setTimeout(() => {
@@ -213,12 +213,12 @@ function initContactForm() {
 
     inputs.forEach(input => {
       const errorMsg = document.getElementById(`${input.id}-error`);
-      
+
       if (!input.value.trim()) {
         isValid = false;
         input.classList.add('invalid');
         if (errorMsg) errorMsg.style.display = 'block';
-      } 
+      }
       else if (input.type === 'email' && !validateEmail(input.value)) {
         isValid = false;
         input.classList.add('invalid');
@@ -233,13 +233,13 @@ function initContactForm() {
     }
 
     // Gather form values
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const message = document.getElementById('message').value.trim();
 
     // Build mailto: URL – opens native email client on iOS, Android, Mac & Windows
-    const to      = 'Dylan.m.ledbetter@gmail.com';
+    const to = 'Dylan.m.ledbetter@gmail.com';
     const bodyLines = [
       `Name: ${name}`,
       `Email: ${email}`,
