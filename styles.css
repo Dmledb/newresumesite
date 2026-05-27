@@ -1395,20 +1395,50 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   }
 }
 
-/* Mobile Breakpoint */
+/* Mobile Breakpoint — iPhone Optimized */
 @media (max-width: 600px) {
   :root {
     --spacing-lg: 1rem;
     --spacing-xl: 1.5rem;
+    --spacing-xxl: 2rem;
+    --header-height-normal: 70px;
+    --header-height-shrunk: 55px;
+  }
+
+  /* Prevent horizontal overflow on iPhone */
+  body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Safe area support for iPhone notch & home indicator */
+  #main-header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .main-footer {
+    padding-bottom: calc(var(--spacing-xl) + env(safe-area-inset-bottom));
   }
 
   section {
     padding: var(--spacing-xl) 0;
   }
 
-  /* Hamburger Menu implementation */
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Hamburger Menu */
   .menu-toggle {
     display: block;
+    /* Minimum 44px tap target per Apple HIG */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   #nav-menu {
@@ -1421,6 +1451,7 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: var(--spacing-lg) 0;
+    padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom));
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -1436,11 +1467,192 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   #nav-menu ul {
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: 0;
   }
 
+  /* Larger tap targets for nav links */
+  #nav-menu a {
+    display: block;
+    padding: 0.85rem 2rem;
+    font-size: 1.1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hero — single column, content first */
+  .hero-section {
+    padding-top: calc(var(--header-height-normal) + var(--spacing-md));
+    min-height: auto;
+    padding-bottom: var(--spacing-xxl);
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+    justify-content: center;
+  }
+
+  /* Make buttons full-width, finger-friendly height */
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 50px;
+    font-size: 1rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Hide the code card on small phones — save vertical space */
+  .hero-visual {
+    display: none;
+  }
+
+  /* About grid: single column */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  /* Make skill pills easier to tap */
+  .skill-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Skills accordion — bigger touch targets */
+  .skills-group summary {
+    padding: var(--spacing-md) var(--spacing-md);
+    min-height: 52px;
+  }
+
+  /* Timeline: tighter on mobile */
+  .timeline::before {
+    left: 16px;
+  }
+  .timeline-item {
+    padding-left: 38px;
+    margin-bottom: var(--spacing-lg);
+  }
+  .timeline-dot {
+    left: 10px;
+    top: 20px;
+  }
+  .timeline-date {
+    position: static;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9rem;
+  }
+  .timeline-card {
+    padding: var(--spacing-md);
+  }
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeline-header h3 {
+    font-size: 1rem;
+  }
+
+  /* Expand/collapse summary — big tap area */
+  .timeline-details summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Project filters: scrollable row on small screens */
+  .project-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: var(--spacing-sm);
+    /* Hide scrollbar visually */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .project-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Projects: single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact: single column */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .contact-form-wrapper {
+    padding: var(--spacing-md);
+  }
+
+  /* Form rows: always stacked */
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  /* Inputs: prevent iOS zoom on focus (needs font-size >= 16px) */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 0.9rem 1rem;
+    border-radius: var(--border-radius-sm);
+    /* Better tap experience */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Taller submit button */
+  #submit-btn {
+    min-height: 52px;
+    font-size: 1rem;
+  }
+
+  /* Contact method items - more spacing */
+  .contact-method-item {
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .contact-link {
+    word-break: break-all;
   }
 
   .timeline-header {
@@ -1451,6 +1663,55 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   .footer-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Reduce section titles on small screens */
+  .section-title {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+/* Extra small phones (SE, Mini) */
+@media (max-width: 380px) {
+  :root {
+    --spacing-lg: 0.75rem;
+    --spacing-md: 0.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .card-body {
+    font-size: 0.75rem;
+  }
+}
+
+/* iPhone landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--header-height-shrunk) + var(--spacing-md));
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: var(--spacing-lg);
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-visual {
+    display: flex;
+  }
+
+  .social-links {
+    justify-content: flex-start;
   }
 }
 

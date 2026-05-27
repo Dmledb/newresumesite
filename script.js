@@ -232,32 +232,36 @@ function initContactForm() {
       return;
     }
 
-    // Show loading spinner state
-    submitBtn.classList.add('loading');
-    submitBtn.disabled = true;
-    inputs.forEach(input => input.disabled = true);
-    feedback.style.display = 'none';
+    // Gather form values
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-    // Simulated API POST Fetch
+    // Build mailto: URL – opens native email client on iOS, Android, Mac & Windows
+    const to      = 'Dylan.m.ledbetter@gmail.com';
+    const bodyLines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      '',
+      message
+    ];
+    const mailtoURL =
+      `mailto:${to}` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+    // Open the mail client
+    window.location.href = mailtoURL;
+
+    // Show confirmation and clear form
+    feedback.textContent = 'Your email client is opening — just hit Send! ✉️';
+    feedback.className = 'form-feedback success';
+    inputs.forEach(input => input.value = '');
+
     setTimeout(() => {
-      // Re-enable controls
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
-      inputs.forEach(input => {
-        input.disabled = false;
-        input.value = ''; // Clear fields
-      });
-
-      // Show success feedback
-      feedback.textContent = 'Thank you! Your message has been sent successfully.';
-      feedback.className = 'form-feedback success';
-      
-      // Auto-hide feedback after 5 seconds
-      setTimeout(() => {
-        feedback.style.display = 'none';
-      }, 5000);
-
-    }, 1800);
+      feedback.style.display = 'none';
+    }, 6000);
   });
 
   function resetErrors() {
