@@ -116,7 +116,11 @@ html[data-theme="light"] {
   }
 }
 
-/* Browser customizations */
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 ::selection {
   background-color: var(--selection-bg);
 }

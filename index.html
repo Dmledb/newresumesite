@@ -51,7 +51,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li style="display: none;"><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -128,17 +128,14 @@
                 <span class="card-title">dylan_ledbetter.json</span>
               </div>
               <div class="card-body code-font">
-                <span class="code-keyword">const</span> architect = {
-                name: <span class="code-string">"Dylan Ledbetter"</span>,
-                title: <span class="code-string">"IoT Edge System Architect"</span>,
-                os: [<span class="code-string">"Linux"</span>, <span class="code-string">"Ubuntu"</span>], <span
-                  class="code-string">"RHEL"</span>],
-                comms: [<span class="code-string">"Cellular"</span>, <span class="code-string">"LEO Satellite"</span>,
-                <span class="code-string">"SCADA"</span>],
-                orchestration: [<span class="code-string">"Docker"</span>, <span class="code-string">"OpenShift"</span>,
-                <span class="code-string">"Ansible"</span>], <span class="code-string">"Puppet"</span>],
-                activeGateways: <span class="code-string">"1500+"</span>
-                };
+<span class="code-keyword">const</span> architect = {
+  name: <span class="code-string">"Dylan Ledbetter"</span>,
+  title: <span class="code-string">"IoT Edge System Architect"</span>,
+  company: <span class="code-string">"ExxonMobil"</span>,
+  os: [<span class="code-string">"Linux"</span>, <span class="code-string">"Ubuntu"</span>, <span class="code-string">"RHEL"</span>],
+  orchestration: [<span class="code-string">"OpenShift"</span>, <span class="code-string">"Ansible"</span>, <span class="code-string">"Puppet"</span>],
+  activeGateways: <span class="code-string">"1500+"</span>
+};
               </div>
             </div>
             <div class="glow-sphere"></div>
@@ -154,13 +151,10 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              I am an IoT Edge Systems Architect with 8+ years of experience specialized in building secure, distributed
-              compute infrastructures for remote devices, factory floors, and industrial automation networks.
+              I am an experienced Platform Engineer and IoT Edge Systems Architect with a demonstrated history of working in the oil & energy industry at ExxonMobil. Specializing in secure edge computing, configuration management, and hybrid-cloud container environments.
             </p>
             <p>
-              My design philosophy centers around high availability, automated host provisioning, failover telemetries,
-              and containerized edge logic. I excel at orchestrating Linux distributions, writing high-efficiency Bash
-              and Python control scripts, and integrating hardware sensors with cloud endpoints.
+              My design philosophy centers around high availability, automated host provisioning, failover telemetries, and containerized edge logic. I excel at orchestrating Linux distributions, writing high-efficiency Bash and Python control scripts, and integrating hardware sensors with cloud endpoints.
             </p>
 
             <div class="core-values">
@@ -173,14 +167,12 @@
               <div class="value-item">
                 <div class="value-icon">🛰️</div>
                 <h3>Smart Comms</h3>
-                <p>Architecting hybrid connection paths utilizing cellular networks, LEO satellites (Starlink), and
-                  local industrial fieldbuses.</p>
+                <p>Architecting hybrid connection paths utilizing cellular networks, LEO satellites, and local industrial fieldbuses.</p>
               </div>
               <div class="value-item">
                 <div class="value-icon">☁️</div>
                 <h3>Scale Control</h3>
-                <p>Standardizing configuration states across massive device grids using Ansible, Puppet, and OpenShift
-                  clusters.</p>
+                <p>Standardizing configuration states across massive device grids using Ansible, Puppet, and OpenShift clusters.</p>
               </div>
             </div>
           </div>
@@ -196,55 +188,64 @@
                   <span class="accordion-icon">+</span>
                 </summary>
                 <div class="skills-group-content">
-                  <span class="skill-pill">Linux</span>
-                  <span class="skill-pill">Ubuntu</span>
-                  <span class="skill-pill">Hardware Gateways</span>
+                  <span class="skill-pill">Linux (RHEL/Ubuntu)</span>
+                  <span class="skill-pill">Satellite</span>
+                  <span class="skill-pill">KVM (Virtualization)</span>
+                  <span class="skill-pill">OneView</span>
+                  <span class="skill-pill">Infoblox</span>
+                  <span class="skill-pill">Computer Hardware</span>
                   <span class="skill-pill">Distributed Systems</span>
-                  <span class="skill-pill">System Architecture</span>
                 </div>
               </details>
 
               <details class="skills-group glass">
                 <summary class="skills-group-header">
-                  <span>Containers & Automation</span>
+                  <span>Containers & Orchestration</span>
                   <span class="accordion-icon">+</span>
                 </summary>
                 <div class="skills-group-content">
-                  <span class="skill-pill">Containers</span>
+                  <span class="skill-pill">OpenShift 3 & 4</span>
+                  <span class="skill-pill">Kubernetes</span>
                   <span class="skill-pill">Docker</span>
-                  <span class="skill-pill">OpenShift</span>
+                  <span class="skill-pill">Podman</span>
+                  <span class="skill-pill">Argo CD</span>
+                  <span class="skill-pill">ARO (Azure Red Hat OpenShift)</span>
+                  <span class="skill-pill">ROSA (ROSA on AWS)</span>
+                  <span class="skill-pill">AKS</span>
+                  <span class="skill-pill">OADP/Velero</span>
+                </div>
+              </details>
+
+              <details class="skills-group glass">
+                <summary class="skills-group-header">
+                  <span>Configuration & Development</span>
+                  <span class="accordion-icon">+</span>
+                </summary>
+                <div class="skills-group-content">
                   <span class="skill-pill">Puppet</span>
-                  <span class="skill-pill">Ansible</span>
+                  <span class="skill-pill">Ansible / Tower</span>
+                  <span class="skill-pill">Python (Django/Flask)</span>
                   <span class="skill-pill">Bash Scripting</span>
-                  <span class="skill-pill">Python Automation</span>
+                  <span class="skill-pill">Git (GitHub/GitLab)</span>
+                  <span class="skill-pill">JFrog</span>
+                  <span class="skill-pill">Nexus</span>
+                  <span class="skill-pill">Minio</span>
                 </div>
               </details>
 
               <details class="skills-group glass">
                 <summary class="skills-group-header">
-                  <span>Connectivity & Protocols</span>
+                  <span>Monitoring & Cloud Intel</span>
                   <span class="accordion-icon">+</span>
                 </summary>
                 <div class="skills-group-content">
-                  <span class="skill-pill">SCADA Systems</span>
-                  <span class="skill-pill">Cellular Connectivity</span>
-                  <span class="skill-pill">LEO Connectivity</span>
-                  <span class="skill-pill">Networking (TCP/IP)</span>
-                  <span class="skill-pill">Industrial Protocols</span>
-                </div>
-              </details>
-
-              <details class="skills-group glass">
-                <summary class="skills-group-header">
-                  <span>Cloud & Intelligence</span>
-                  <span class="accordion-icon">+</span>
-                </summary>
-                <div class="skills-group-content">
-                  <span class="skill-pill">Azure IoT</span>
-                  <span class="skill-pill">AWS Core / Greengrass</span>
+                  <span class="skill-pill">DataDog</span>
+                  <span class="skill-pill">PagerDuty (Certified)</span>
+                  <span class="skill-pill">Prometheus</span>
+                  <span class="skill-pill">Grafana</span>
+                  <span class="skill-pill">Azure IoT Edge</span>
+                  <span class="skill-pill">AWS Cloud</span>
                   <span class="skill-pill">Machine Learning</span>
-                  <span class="skill-pill">HTML & CSS</span>
-                  <span class="skill-pill">Scripting</span>
                 </div>
               </details>
             </div>
@@ -262,16 +263,15 @@
           <!-- Timeline Item 1 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-date">Sept 2025 - Present</div>
             <div class="timeline-card glass">
               <div class="timeline-header">
-                <h3>Lead IoT Systems Architect <span class="text-gradient">@ Horizon Systems</span></h3>
-                <span class="timeline-location">Remote / Houston, TX</span>
+                <h3>IoT Edge System Architect <span class="text-gradient">@ ExxonMobil</span></h3>
+                <span class="timeline-location">Houston, TX</span>
               </div>
-              <p class="role-desc">Architecting secure containerized runtimes and automation engines for fleet edge
-                computing hardware.</p>
+              <p class="role-desc">Leading the architectural design, security compliance, and platform standardizations for enterprise-scale edge deployments.</p>
 
-              <details class="timeline-details">
+              <details class="timeline-details" open>
                 <summary class="btn-text">
                   Show Achievements
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -280,14 +280,11 @@
                   </svg>
                 </summary>
                 <ul class="achievements-list">
-                  <li>Designed and deployed OpenShift / Kubernetes orchestrations managing 8,000+ active edge gateway
-                    installations globally.</li>
-                  <li>Formulated standardized host configurations utilizing Puppet and Ansible, reducing localized
-                    installation times by 80%.</li>
-                  <li>Engineered network path routing logic for automatic failover between cellular LTE/5G and LEO
-                    satellite (Starlink) links, achieving 99.99% connectivity uptime.</li>
-                  <li>Automated security compliance provisioning across Linux Ubuntu distributions, enforcing sandbox
-                    containment policies for third-party scripts.</li>
+                  <li>Led the architectural design of ExxonMobil's NextGen Upstream IoT Edge compute platform, prioritizing high availability, strict security containment, and unified hybrid-cloud orchestration.</li>
+                  <li>Architected and deployed a cyber-compliance compliance framework across 600 production edge nodes, reinforcing enterprise security posture.</li>
+                  <li>Directed a complex, cross-functional distributed team to deliver multiple high-impact edge use cases from initial proof-of-concept through production rollout.</li>
+                  <li>Scaled a core in-house edge application from 100 to 700 active instances, maintaining robust performance and system reliability under increased load.</li>
+                  <li>Held full technical decision authority, formulating and executing a multi-year technology roadmap to guide edge platform growth, lifecycle management, and long-term sustainment.</li>
                 </ul>
               </details>
             </div>
@@ -296,14 +293,13 @@
           <!-- Timeline Item 2 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">2020 - 2023</div>
+            <div class="timeline-date">May 2023 - Sept 2025</div>
             <div class="timeline-card glass">
               <div class="timeline-header">
-                <h3>Senior Edge Systems Architect <span class="text-gradient">@ Industrial Solutions Group</span></h3>
-                <span class="timeline-location">Boston, MA</span>
+                <h3>IoT Edge Engineer <span class="text-gradient">@ ExxonMobil</span></h3>
+                <span class="timeline-location">Houston, TX</span>
               </div>
-              <p class="role-desc">Developed localized telemetry sync engines and SCADA gateway systems for critical
-                infrastructure.</p>
+              <p class="role-desc">Engineered customized OS profiles, automated deployment pipelines, and deployed resilient edge hardware.</p>
 
               <details class="timeline-details">
                 <summary class="btn-text">
@@ -314,14 +310,9 @@
                   </svg>
                 </summary>
                 <ul class="achievements-list">
-                  <li>Integrated SCADA field devices with central cloud pipelines (AWS IoT Core, Azure IoT Hub),
-                    structuring data telemetry under high-throughput conditions.</li>
-                  <li>Developed custom containerized microservices in Docker to aggregate sensor readings and perform
-                    local processing, decreasing local bandwidth requirements by 45%.</li>
-                  <li>Deployed TensorFlow Lite machine learning models directly to localized edge gateways to trigger
-                    real-time anomaly alerts without cloud reliance.</li>
-                  <li>Coded automated Python and Bash scripting test harnesses to simulate sensor streams and hardware
-                    failure conditions.</li>
+                  <li>Built custom Ubuntu based Cloud-init image for Edge hardware deployed in remote upstream sites, decreasing gateway provisioning time from 3 hours to 15 minutes.</li>
+                  <li>Architected and deployed Puppet configuration management solutions for devices connected over complex, segmented fiber networks.</li>
+                  <li>Automated provisioning and deployment of 100+ Ignition Edge Devices.</li>
                 </ul>
               </details>
             </div>
@@ -330,14 +321,13 @@
           <!-- Timeline Item 3 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">2018 - 2020</div>
+            <div class="timeline-date">June 2019 - May 2023</div>
             <div class="timeline-card glass">
               <div class="timeline-header">
-                <h3>Systems Engineer <span class="text-gradient">@ Automation Labs</span></h3>
-                <span class="timeline-location">Austin, TX</span>
+                <h3>OpenShift Container Platform Engineer <span class="text-gradient">@ ExxonMobil</span></h3>
+                <span class="timeline-location">Houston, TX</span>
               </div>
-              <p class="role-desc">Administered plant floor automation systems and configured remote telemetry units.
-              </p>
+              <p class="role-desc">Designed and maintained large-scale private/hybrid cloud container infrastructures and automation engines.</p>
 
               <details class="timeline-details">
                 <summary class="btn-text">
@@ -348,12 +338,15 @@
                   </svg>
                 </summary>
                 <ul class="achievements-list">
-                  <li>Maintained plant-floor Linux (Ubuntu) server nodes, managing user access controls, system backups,
-                    and hardware updates.</li>
-                  <li>Authored robust Bash configuration scripts that automated 90% of repeatable setup routines for
-                    remote telemetry terminals (RTUs).</li>
-                  <li>Created responsive HTML/CSS web portals to serve local diagnostic data and cellular signal logs to
-                    plant supervisors.</li>
+                  <li>Technical Project lead for deployment of Hybrid Cloud Azure Red Hat OpenShift (ARO) clusters to move connected workloads to the cloud, saving an estimated $6M over five years.</li>
+                  <li>Migration project lead providing tooling and defining automated workflows for migrating workloads to ARO.</li>
+                  <li>Rearchitected customer applications to implement node pinning strategies to optimize vendor licensing, resulting in an immediate cost avoidance of $8M.</li>
+                  <li>Deployed OpenShift BareMetal Clusters utilizing RHACM (Red Hat Advanced Cluster Management) to enable migrations.</li>
+                  <li>Deployed Red Hat OpenShift Service on AWS (ROSA) clusters to enable multi-cloud container workloads.</li>
+                  <li>Managed the deployment and maintenance of 500+ Linux OpenShift Hosts using Ansible, maintaining an uptime of 99.9%.</li>
+                  <li>Implemented DataDog monitoring and integrated PagerDuty for on-call solutions, creating visibility and custom alerts to improve platform availability.</li>
+                  <li>Implemented and customized Red Hat Cost Management for cloud cost auditing and control.</li>
+                  <li>Architected and implemented OADP/Velero workflows to provide cross-site disaster recovery.</li>
                 </ul>
               </details>
             </div>
@@ -362,8 +355,59 @@
       </div>
     </section>
 
+    <!-- Education & Certifications Section -->
+    <section id="education-certifications" class="education-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="about-grid">
+          <!-- Education Column -->
+          <div class="education-column">
+            <h3 style="margin-bottom: var(--spacing-lg); color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+              <span>🎓</span> Education
+            </h3>
+            <div class="timeline-card glass" style="padding: var(--spacing-lg); border-radius: var(--border-radius-md);">
+              <div class="timeline-header" style="margin-bottom: var(--spacing-sm);">
+                <h4 style="font-size: 1.2rem; margin: 0;">Oklahoma State University</h4>
+                <span class="timeline-location" style="color: var(--accent-1); font-weight: 600;">2014 - 2018</span>
+              </div>
+              <p style="margin: 0 0 var(--spacing-xs) 0; font-weight: 600; color: var(--text-primary);">
+                Bachelor of Science in Business Administration
+              </p>
+              <p style="margin: 0 0 var(--spacing-sm) 0; font-size: 0.95rem; color: var(--text-secondary);">
+                Major: Management Information Systems &bull; Concentration: Information Assurance
+              </p>
+              <span class="badge" style="margin-bottom: 0; display: inline-block;">GPA: 3.8 / 4.0</span>
+            </div>
+          </div>
+
+          <!-- Certifications Column -->
+          <div class="certifications-column">
+            <h3 style="margin-bottom: var(--spacing-lg); color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+              <span>🏆</span> Certifications
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+              <div class="timeline-card glass" style="padding: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-md);">
+                <div style="font-size: 1.8rem; line-height: 1;">🛡️</div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin: 0 0 2px 0;">Microsoft Certified: Azure Fundamentals (AZ-900)</h4>
+                  <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">Microsoft</p>
+                </div>
+              </div>
+              <div class="timeline-card glass" style="padding: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-md);">
+                <div style="font-size: 1.8rem; line-height: 1;">🚨</div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin: 0 0 2px 0;">PagerDuty Foundational Practitioner</h4>
+                  <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">PagerDuty Certification Platform</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Portfolio Section -->
-    <section id="projects" class="projects-section scroll-reveal">
+    <section id="projects" class="projects-section scroll-reveal" style="display: none;">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
 
